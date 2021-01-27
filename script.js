@@ -55,7 +55,7 @@ function updateSpanText(id1, id2, id3, id4, id5) {
     const subTotalNumberUpdate = shoppingCartProductPriceUpdate;
     document.getElementById(id3).innerText = subTotalNumberUpdate;
 
-    // --Tax & total--//
+    //--Tax & total--//
     const tax = document.getElementById(id4).innerText;
     const taxNumber = parseInt(tax);
     const taxNumberUpdate = subTotalNumberUpdate + taxNumber;
@@ -85,9 +85,49 @@ plusIcon.addEventListener("click", function() {
      const subTotalNumberUpdate = casePriceUpdate;
      document.getElementById("subtotal").innerText = subTotalNumberUpdate;
  
-     // --Tax & total--//
+     //--Tax & total--//
      const tax = document.getElementById("tax").innerText;
      const taxNumber = parseInt(tax);
      const taxNumberUpdate = subTotalNumberUpdate + taxNumber;
      document.getElementById("total").innerText = taxNumberUpdate;
+})
+
+
+// --Minus Event Handler--//
+const minusIcon = document.getElementById("minusIcon");
+minusIcon.addEventListener("click", function() {
+        // --Shopping Cart Value--//
+    const value = document.getElementById("value").value;
+    const valueNumber = parseInt(value);
+    const valueUpdate = valueNumber - 1;
+    document.getElementById("value").value = valueUpdate;
+    // --Shopping Cart Product Price--//
+    const casePrice = document.getElementById("iphoneCasePrice").innerText;
+    const casePriceNumber = parseInt(casePrice);
+    const casePriceUpdate = casePriceNumber - 59;
+    document.getElementById("iphoneCasePrice").innerText = casePriceUpdate;
+
+     // --Subtotal--//
+     const subTotal = document.getElementById("subtotal").innerText;
+     const subTotalNumber = parseInt(subTotal);
+     const subTotalNumberUpdate = casePriceUpdate;
+     document.getElementById("subtotal").innerText = subTotalNumberUpdate;
+ 
+    //  // --Tax & total--//
+     const tax = document.getElementById("tax").innerText;
+     const taxNumber = parseInt(tax);
+     const taxNumberUpdate = subTotalNumberUpdate + taxNumber;
+     document.getElementById("total").innerText = taxNumberUpdate;
+})
+
+
+
+// --Login-area--//
+// --Login Button Event Handler--//
+const checkoutBtn = document.getElementById("checkoutBtn");
+checkoutBtn.addEventListener('click',function(){
+    const shoppingCart = document.getElementById('shoppingCart');
+    shoppingCart.style.display = "none";
+    const loginArea = document.getElementById("login-area");
+    loginArea.style.display = "block";
 })

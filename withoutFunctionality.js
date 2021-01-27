@@ -56,3 +56,6 @@ shoppingCartMinusIcon.addEventListener("click", function() {
     const taxNumberUpdate = subTotalNumberUpdate + taxNumber;
     document.getElementById("total").innerText = taxNumberUpdate;
 })
+
+
+
